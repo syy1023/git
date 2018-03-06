@@ -1,0 +1,54 @@
+获取gettransaction后的hex
+result2=`/home/jack/bullockchain-cli  -conf='/home/jack/bitcoin.conf' gettransaction 9925f319f4e3b8b444b9712e5dcb4df5aef3560fb19b753b2a18d2683c5f5810|grep hex|awk '{print $2}'|sed 's/\"//g'`
+
+将hex当作decoderawtransaction的参数
+/home/jack/bullockchain-cli  -conf='/home/jack/bitcoin.conf' gettransaction $result2|grep hex|awk '{print $2}'|sed 's/\"//g'
+
+精确匹配decoderawtransaction返回的size字段
+/home/jack/bullockchain-cli  -conf='/home/jack/bitcoin.conf' decoderawtransaction $result2|grep -w size|awk '{print $2}'
+
+获取计费currencysymbol
+/home/jack/bullockchain-cli  -conf='/home/jack/bitcoin.conf' gettransaction 
+9925f319f4e3b8b444b9712e5dcb4df5aef3560fb19b753b2a18d2683c5f5810|grep currencysymbol|awk '{print $2}'|awk 'NR==3'|sed 's/\"//g'
+
+获取fee
+/home/jack/bullockchain-cli  -conf='/home/jack/bitcoin.conf' gettransaction 9925f319f4e3b8b444b9712e5dcb4df5aef3560fb19b753b2a18d2683c5f5810|grep fee|awk '{print $2}'
+
+
+
+
+
+
+
+#!/bin/bash
+
+#获取货币种类
+result=`/home/jack/bullockchain-cli  -conf='/home/jack/bitcoin.conf' getbalance|cut -d":" -f1|sed 's/\,//g' |sed 's/\"//g' |tr -d "{}"|grep -v "^$"`
+
+
+OLD_IFS="$IFS"
+IFS=" "
+arr=($result)
+
+IFS="$OLD_IFS"
+
+while true
+do
+for s in ${arr[@]}
+do
+     if [ "$s" > "0" ]
+    then
+   #获取转账txid 
+    result2=`/home/jack/bullockchain-cli  -conf='/home/jack/bitcoin.conf' sendtoaddress 1AGoxBiXYTsRtyK6p9swXRaWqdiJ9uUd7o $s 1`
+    echo "currency $s"
+    hex=`/home/jack/bullockchain-cli  -conf='/home/jack/bitcoin.conf' gettransaction $result2|grep hex|awk '{print $2}'|sed 's/\"//g'`
+    echo $hex
+   #获取交易size
+    size=`/home/jack/bullockchain-cli  -conf='/home/jack/bitcoin.conf' decoderawtransaction $hex|grep -w size|awk '{print $2}'`
+    echo $size
+    currencysymbol=`/home/jack/bullockchain-cli  -conf='/home/jack/bitcoin.conf' gettransaction $result2|grep currencysymbol|awk '{print $2}'|awk 'NR==3'|sed 's/\"//g'`
+    echo $currencysymbol
+    #获取扣除fee
+    fee=`/home/jack/bullockchain-cli  -conf='/home/jack/bitcoin.conf' gettransaction $result2|grep fee|awk '{print $2}'`
+    echo $currencysymbol $size  $fee>log.txt
+    fi
