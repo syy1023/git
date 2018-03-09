@@ -32,3 +32,14 @@ sleep 10
 #fi
 sleep 15
 done
+
+
+
+
+增加获取货币数量：
+#获取货币数量
+ 16   #currency_amount=`bullockchain-cli  -conf=/home/jack/bitcoin.conf getbalance|grep $s|awk '{print $2}'|sed 's/\,//g'|awk '{print int($0)}'`
+ 17   #echo "currency symbol: $s" "amount: $currency_amount" 
+ 
+ 然后判断如果货币数量是0，则不进行转账 但是现在的问题是，数量都是通过rpc命令截取出来的，是文本字符而非数字
+ 
