@@ -1,0 +1,50 @@
+#coding=utf-8
+import requests
+import json
+import unittest
+import unittest,time,re,os
+import HTMLTestRunner
+import pprint
+
+#post传递信息
+url="http://192.168.0.68:9332"
+header = {"Authorization": "Basic UlBDdXNlcjoxMjM0NTY="}
+auth = ("RPCuser", "123456")        
+verificationErrors=[]
+accept_next_alert=True
+
+while (1>0):
+    for i in range(1,10000):
+        
+    
+#发送交易并获取txid
+        data={"jsonrpc": "1.0", "id":"curltest", "method": "sendtoaddress", "params": ["19zNm4or6pB9kHPHrf64KW652WLmwYZtYE", "DALI", i] }
+        r=requests.post(url=url,json=data, auth=auth)
+
+#截取返回信息中的txid
+        txid=r.text[11:75]
+        print txid,i
+
+#使用gettransaction获取返回值hexstring
+        data2={"jsonrpc": "1.0", "id":"curltest", "method": "gettransaction", "params": [txid] }
+        r2=requests.post(url=url,json=data2, auth=auth)
+        r2Obj = json.loads(r2.text, 'utf-8')
+#pprint.pprint (json.loads(r2.text))
+#print r2Obj
+#print "hexstring的值："
+#print r2Obj["result"]["hex"]
+        print "扣除手续费用："
+        print r2Obj["result"]["fee"]
+        r2_hexstring=r2Obj["result"]["hex"]
+
+#使用decoderawtransaction获取fee
+        data3={"jsonrpc": "1.0", "id":"curltest", "method": "decoderawtransaction", "params": [r2_hexstring] }
+        r3=requests.post(url=url,json=data3, auth=auth)
+        r3Obj = json.loads(r3.text, 'utf-8')
+#coding=utf-8
+        print "扣除手续费用标志："
+        print r3Obj["result"]["gascurrencysymbol"]
+        print "交易大小："
+        print r3Obj["result"]["size"]
+        print "\n"
+        time.sleep(5)
