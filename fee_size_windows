@@ -9,7 +9,7 @@ import pprint
 #post传递信息
 url="http://192.168.0.68:9332"
 header = {"Authorization": "Basic UlBDdXNlcjoxMjM0NTY="}
-auth = ("RPCuser", "123456")        
+auth = ("*****", "*****")        
 verificationErrors=[]
 accept_next_alert=True
 
