@@ -76,18 +76,51 @@ for(i=0;i<=2;i++){
 </script>
 
 
+
+<!--对象-->
 <script>
 var computer={band:"microsoft",operation:"windows",size:"1422pX"};
 document.write(computer.band+"<br />");
 document.write(computer["operation"]);
 </script>
 
+<br>
+
+<!--函数-->
+<button onclick="onefunction('anryan','26')">click_function</button>
+<script>
+function onefunction(name,age){
+  alert("my name is :"+name+", and I'm"+age+"years old");
+}
+</script>
+
+<!--传入返回参数-->
+<p id="for_return"></p>
+<script>
+function function_return(a,b){
+  return a*b;
+ }
+document.getElementById("for_return").innerHTML=function_return(13,14);
+</script>
 
 
 
-
-
-
+<!--if判断语句-->
+<button onclick="function_if()">click_if</button>
+<p id="for_if"></p>
+<script>
+function function_if(){
+ var x="";
+ var time=new Date().getHours();
+ if(time<12){
+    x="it is morning";
+  }
+  else{
+     x="it's afternoon" 
+  }
+  document.getElementById("for_if").innerHTML=x
+}
+</script>
 
  
 </body></html>
