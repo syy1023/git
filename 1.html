@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html><body>
+
+
+
+<script>
+//写入html元素输出
+document.write("<h1>this is the h1 header in js document write</h1>");
+document.write("<p>this is the paragraph in js document write</p>");
+
+</script>
+
+<!--对事件做出反应-->
+<button type="button" onclick="alert('welcome here')">click </button>
+
+
+
+<!--修改页面元素和样式-->
+<p id="red">red</p>
+<script>
+x=document.getElementById("red");
+x.innerHTML="this is new element";
+x.style.color="#ff0000";
+</script>
+
+<!--验证输入-->
+<input id="text_input" type=text>
+<script>
+function my_input_verify(){
+var x=document.getElementById('text_input').value;
+if(x==''||isNaN(x)){
+      alert("please input number!~");
+   }
+}
+</script>
+<button type="button" onclick="my_input_verify()">click here</button>
+
+
+
+<!--往页面插入内容-->
+<h1>first html header</h1>
+<p id="p_id"></p>
+<script>
+document.getElementById("p_id").innerHTML="this is the second header inheritated from the first one";
+</script>
+
+<!--点击跳转后的显示-->
+<button onclick="for_test()">click here2</button>
+<script>
+function for_test(){
+document.write("after click it shows text");
+  }
+</script>
+
+<br>
+<!--关于参数-->
+<button onclick="var_function()">var_click</button>
+<p id="var"></p>
+<script>
+function var_function(){
+var var1="create_dvar"
+document.getElementById("var").innerHTML=var1;
+}
+</script>
+
+<!--数组-->
+<script>
+var i;
+var person=new Array();
+person[0]="Anryan";
+person[1]="xj";
+person[2]="wqw";
+for(i=0;i<=2;i++){
+  document.write(person[i]+"<br>");
+}
+</script>
+
+
+<script>
+var computer={band:"microsoft",operation:"windows",size:"1422pX"};
+document.write(computer.band+"<br />");
+document.write(computer["operation"]);
+</script>
+
+
+
+
+
+
+
+
+ 
+</body></html>
