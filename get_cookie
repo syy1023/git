@@ -1,0 +1,41 @@
+
+#coding=utf-8
+
+import requests
+import time
+import pprint
+
+with open('C:\\Users\\test\\Desktop\\phonenum.txt') as lines:
+    for line in lines:        
+        #以下两行是操作过程中的错误
+        #f=open('C:\\Users\\test\\Desktop\\phonenum.txt','rb')
+        #line=f.readline()
+
+        url = "http://api.wallet.ngochain.cn/api/user/login"
+
+        querystring = {"l":"zh-cn"}
+
+        print line
+        
+        #使用拼接
+        payload1 = "phone="+line+"&code=6783&capthca=4513&phonecode=86"
+        payload=payload1.replace('\r\n','')
+
+        #print payload.replace('\r\n','')
+
+        headers = {
+            'content-type': "application/x-www-form-urlencoded",
+            'cookie': "PHPSESSID=rlmihasl6u1kqnl68rid80mq61",
+            'cache-control': "no-cache",
+            'postman-token': "331bf78b-5352-4035-a870-f54bd320b326"
+            }
+
+        response = requests.request("POST", url, data=payload, headers=headers, params=querystring)
+
+        print(response.text)
+        print response.headers["Set-Cookie"]
+        
+
+        #f.close()
+
+    
