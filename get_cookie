@@ -1,23 +1,23 @@
-
 #coding=utf-8
 
 import requests
 import time
 import pprint
 
-with open('C:\\Users\\test\\Desktop\\phonenum.txt') as lines:
-    for line in lines:        
-        #以下两行是操作过程中的错误
-        #f=open('C:\\Users\\test\\Desktop\\phonenum.txt','rb')
+with open('C:\\Users\\test\\Desktop\\num.txt') as lines:
+    for line in lines:
+        
+    
+        
+        #f=open('C:\\Users\\test\\Desktop\\num.txt','rb')
         #line=f.readline()
 
         url = "http://api.wallet.ngochain.cn/api/user/login"
 
         querystring = {"l":"zh-cn"}
 
-        print line
-        
-        #使用拼接
+        #print line
+
         payload1 = "phone="+line+"&code=6783&capthca=4513&phonecode=86"
         payload=payload1.replace('\r\n','')
 
@@ -32,10 +32,19 @@ with open('C:\\Users\\test\\Desktop\\phonenum.txt') as lines:
 
         response = requests.request("POST", url, data=payload, headers=headers, params=querystring)
 
-        print(response.text)
-        print response.headers["Set-Cookie"]
+       
+        print response.headers["Set-Cookie"][120:152]
         
 
         #f.close()
 
     
+
+
+
+
+
+
+
+返回如：
+{'Access-Control-Allow-Headers': 'DNT,User-Agent,Keep-Alive,Content-Type,Accept,origin,X-Requested-With,accept-language', 'X-Powered-By': 'PHP/7.0.27', 'Transfer-Encoding': 'chunked', 'Set-Cookie': 'bullock_ico_key=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0; path=/; domain=.ngochain.cn, bullock_ico_key=4c31d48bcc7cb9a471ce972e0acb7358; expires=Sun, 15-Apr-2018 09:03:41 GMT; Max-Age=604800; path=/; domain=.ngochain.cn', 'Expires': 'Thu, 19 Nov 1981 08:52:00 GMT', 'Server': 'nginx', 'Connection': 'keep-alive', 'Pragma': 'no-cache', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Date': 'Sun, 08 Apr 2018 09:03:41 GMT', 'Access-Control-Allow-Credentials': 'true', 'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,PUT,DELETE', 'Content-Type': 'application/json; charset=utf-8'}
