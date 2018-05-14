@@ -41,19 +41,26 @@ multi_add21=`/bin/bullockchain-cli -conf=/home/anryan/bullockChain.conf createmu
 redeemScript21=`/bin/bullockchain-cli -conf=/home/anryan/bullockChain.conf createmultisig 1 [\"$pub1\",\"$pub2\"]|grep redeemScript|awk '{print $2}'|sed 's/\"//g'|sed 's/\,//g'`
 echo "1 of 2 address is: $multi_add21, the redeem is: $redeemScript21"
 echo -e  "\n"
-multi_add2=`/bin/bullockchain-cli -conf=/home/anryan/bullockChain.conf createmultisig 2 [\"$pub1\",\"$pub2\"]|grep address|awk '{print $2}'|sed 's/\"//g'|sed 's/\,//g'`
+
+
+multi_add22=`/bin/bullockchain-cli -conf=/home/anryan/bullockChain.conf createmultisig 2 [\"$pub1\",\"$pub2\"]|grep address|awk '{print $2}'|sed 's/\"//g'|sed 's/\,//g'`
 redeemScript22=`/bin/bullockchain-cli -conf=/home/anryan/bullockChain.conf createmultisig 2 [\"$pub1\",\"$pub2\"]|grep redeemScript|awk '{print $2}'|sed 's/\"//g'|sed 's/\,//g'`
 echo "2 of 2 address is: $multi_add22, the redeem is: $redeemScript22"
 echo -e  "\n"
+
+
 multi_add31=`/bin/bullockchain-cli -conf=/home/anryan/bullockChain.conf createmultisig 1 [\"$pub1\",\"$pub2\",\"$pub3\"]|grep address|awk '{print $2}'|sed 's/\"//g'|sed 's/\,//g'`
 redeemScript31=`/bin/bullockchain-cli -conf=/home/anryan/bullockChain.conf createmultisig 1 [\"$pub1\",\"$pub2\",\"$pub3\"]|grep redeemScript|awk '{print $2}'|sed 's/\"//g'|sed 's/\,//g'`
 echo "1 of 3 address is: $multi_add31, the redeem is: $redeemScript31"
 echo -e  "\n"
 
 multi_add32=`/bin/bullockchain-cli -conf=/home/anryan/bullockChain.conf createmultisig 2 [\"$pub1\",\"$pub2\",\"$pub3\"]|grep address|awk '{print $2}'|sed 's/\"//g'|sed 's/\,//g'`
-redeemScript32=`/bin/bullockchain-cli -conf=/home/anryan/bullockChain.conf createmultisig 2[\"$pub1\",\"$pub2\",\"$pub3\"]|grep redeemScript|awk '{print $2}'|sed 's/\"//g'|sed 's/\,//g'`
+redeemScript32=`/bin/bullockchain-cli -conf=/home/anryan/bullockChain.conf createmultisig 2 [\"$pub1\",\"$pub2\",\"$pub3\"]|grep redeemScript|awk '{print $2}'|sed 's/\"//g'|sed 's/\,//g'`
 echo "2 of 3 address is: $multi_add32, the redeem is: $redeemScript32"
 echo -e  "\n"
+
+
+
 multi_add33=`/bin/bullockchain-cli -conf=/home/anryan/bullockChain.conf createmultisig 3 [\"$pub1\",\"$pub2\",\"$pub3\"]|grep address|awk '{print $2}'|sed 's/\"//g'|sed 's/\,//g'`
 redeemScript33=`/bin/bullockchain-cli -conf=/home/anryan/bullockChain.conf createmultisig 3 [\"$pub1\",\"$pub2\",\"$pub3\"]|grep redeemScript|awk '{print $2}'|sed 's/\"//g'|sed 's/\,//g'`
 echo "3 of 3 address is: $multi_add33, the redeem is: $redeemScript33"
@@ -296,7 +303,7 @@ echo -e  "\n"
 
 multi_add1010=`/bin/bullockchain-cli -conf=/home/anryan/bullockChain.conf createmultisig 10 [\"$pub1\",\"$pub2\",\"$pub3\",\"$pub4\",\"$pub5\",\"$pub6\",\"$pub7\",\"$pub8\",\"$pub9\",\"$pub10\"]|grep address|awk '{print $2}'|sed 's/\"//g'|sed 's/\,//g'`
 redeemScript1010=`/bin/bullockchain-cli -conf=/home/anryan/bullockChain.conf createmultisig 10 [\"$pub1\",\"$pub2\",\"$pub3\",\"$pub4\",\"$pub5\",\"$pub6\",\"$pub8\",\"$pub7\",\"$pub9\",\"$pub10\"]|grep redeemScript|awk '{print $2}'|sed 's/\"//g'|sed 's/\,//g'`
-echo "4 of 10 address is: $multi_add1010, the redeem is: $redeemScript1010"
+echo "10 of 10 address is: $multi_add1010, the redeem is: $redeemScript1010"
 echo -e  "\n"
 sleep 3
 
@@ -403,7 +410,7 @@ echo -e  "\n"
 
 multi_add128=`/bin/bullockchain-cli -conf=/home/anryan/bullockChain.conf createmultisig 8 [\"$pub1\",\"$pub2\",\"$pub3\",\"$pub4\",\"$pub5\",\"$pub6\",\"$pub7\",\"$pub8\",\"$pub9\",\"$pub10\",\"$pub11\",\"$pub12\"]|grep address|awk '{print $2}'|sed 's/\"//g'|sed 's/\,//g'`
 redeemScript128=`/bin/bullockchain-cli -conf=/home/anryan/bullockChain.conf createmultisig 8 [\"$pub1\",\"$pub2\",\"$pub3\",\"$pub4\",\"$pub5\",\"$pub6\",\"$pub8\",\"$pub7\",\"$pub9\",\"$pub10\",\"$pub11\",\"$pub12\"]|grep redeemScript|awk '{print $2}'|sed 's/\"//g'|sed 's/\,//g'`
-echo "1 of 12 address is: $multi_add128, the redeem is: $redeemScript128"
+echo "8 of 12 address is: $multi_add128, the redeem is: $redeemScript128"
 echo -e  "\n"
 
 sleep 3
@@ -420,7 +427,7 @@ echo "10 of 12 address is: $multi_add1210, the redeem is: $redeemScript1210"
 echo -e  "\n"
 
 multi_add1211=`/bin/bullockchain-cli -conf=/home/anryan/bullockChain.conf createmultisig 11 [\"$pub1\",\"$pub2\",\"$pub3\",\"$pub4\",\"$pub5\",\"$pub6\",\"$pub7\",\"$pub8\",\"$pub9\",\"$pub10\",\"$pub11\",\"$pub12\"]|grep address|awk '{print $2}'|sed 's/\"//g'|sed 's/\,//g'`
-redeemScript121=`/bin/bullockchain-cli -conf=/home/anryan/bullockChain.conf createmultisig 11 [\"$pub1\",\"$pub2\",\"$pub3\",\"$pub4\",\"$pub5\",\"$pub6\",\"$pub8\",\"$pub7\",\"$pub9\",\"$pub10\",\"$pub11\",\"$pub12\"]|grep redeemScript|awk '{print $2}'|sed 's/\"//g'|sed 's/\,//g'`
+redeemScript1211=`/bin/bullockchain-cli -conf=/home/anryan/bullockChain.conf createmultisig 11 [\"$pub1\",\"$pub2\",\"$pub3\",\"$pub4\",\"$pub5\",\"$pub6\",\"$pub8\",\"$pub7\",\"$pub9\",\"$pub10\",\"$pub11\",\"$pub12\"]|grep redeemScript|awk '{print $2}'|sed 's/\"//g'|sed 's/\,//g'`
 echo "11 of 12 address is: $multi_add1211, the redeem is: $redeemScript1211"
 echo -e  "\n"
 
@@ -503,7 +510,7 @@ echo "12 of 13 address is: $multi_add131, the redeem is: $redeemScript1312"
 echo -e  "\n"
 
 multi_add1313=`/bin/bullockchain-cli -conf=/home/anryan/bullockChain.conf createmultisig 13 [\"$pub1\",\"$pub2\",\"$pub3\",\"$pub4\",\"$pub5\",\"$pub6\",\"$pub7\",\"$pub8\",\"$pub9\",\"$pub10\",\"$pub11\",\"$pub12\",\"$pub13\"]|grep address|awk '{print $2}'|sed 's/\"//g'|sed 's/\,//g'`
-redeemScript131=`/bin/bullockchain-cli -conf=/home/anryan/bullockChain.conf createmultisig 13 [\"$pub1\",\"$pub2\",\"$pub3\",\"$pub4\",\"$pub5\",\"$pub6\",\"$pub8\",\"$pub7\",\"$pub9\",\"$pub10\",\"$pub11\",\"$pub12\",\"$pub13\"]|grep redeemScript|awk '{print $2}'|sed 's/\"//g'|sed 's/\,//g'`
+redeemScript1313=`/bin/bullockchain-cli -conf=/home/anryan/bullockChain.conf createmultisig 13 [\"$pub1\",\"$pub2\",\"$pub3\",\"$pub4\",\"$pub5\",\"$pub6\",\"$pub8\",\"$pub7\",\"$pub9\",\"$pub10\",\"$pub11\",\"$pub12\",\"$pub13\"]|grep redeemScript|awk '{print $2}'|sed 's/\"//g'|sed 's/\,//g'`
 echo "13 of 13 address is: $multi_add1313, the redeem is: $redeemScript1313"
 echo -e  "\n"
 
@@ -559,7 +566,7 @@ echo "9 of 14 address is: $multi_add149, the redeem is: $redeemScript149"
 echo -e  "\n"
 
 multi_add1410=`/bin/bullockchain-cli -conf=/home/anryan/bullockChain.conf createmultisig 10 [\"$pub1\",\"$pub2\",\"$pub3\",\"$pub4\",\"$pub5\",\"$pub6\",\"$pub7\",\"$pub8\",\"$pub9\",\"$pub10\",\"$pub11\",\"$pub12\",\"$pub13\",\"$pub14\"]|grep address|awk '{print $2}'|sed 's/\"//g'|sed 's/\,//g'`
-redeemScript145=`/bin/bullockchain-cli -conf=/home/anryan/bullockChain.conf createmultisig 10 [\"$pub1\",\"$pub2\",\"$pub3\",\"$pub4\",\"$pub5\",\"$pub6\",\"$pub8\",\"$pub7\",\"$pub9\",\"$pub10\",\"$pub11\",\"$pub12\",\"$pub13\",\"$pub14\"]|grep redeemScript|awk '{print $2}'|sed 's/\"//g'|sed 's/\,//g'`
+redeemScript1410=`/bin/bullockchain-cli -conf=/home/anryan/bullockChain.conf createmultisig 10 [\"$pub1\",\"$pub2\",\"$pub3\",\"$pub4\",\"$pub5\",\"$pub6\",\"$pub8\",\"$pub7\",\"$pub9\",\"$pub10\",\"$pub11\",\"$pub12\",\"$pub13\",\"$pub14\"]|grep redeemScript|awk '{print $2}'|sed 's/\"//g'|sed 's/\,//g'`
 echo "10 of 14 address is: $multi_add1410, the redeem is: $redeemScript1410"
 echo -e  "\n"
 
@@ -630,9 +637,11 @@ echo -e  "\n"
 
 
 multi_add158=`/bin/bullockchain-cli -conf=/home/anryan/bullockChain.conf createmultisig 8 [\"$pub1\",\"$pub2\",\"$pub3\",\"$pub4\",\"$pub5\",\"$pub6\",\"$pub7\",\"$pub8\",\"$pub9\",\"$pub10\",\"$pub11\",\"$pub12\",\"$pub13\",\"$pub14\",\"$pub15\"]|grep address|awk '{print $2}'|sed 's/\"//g'|sed 's/\,//g'`
-redeemScript158=`/bin/bullockchain-cli -conf=/home/anryan/bullockChain.conf createmultisig 8 [\"$pub1\",\"$pub2\",\"$pub3\",\"$pub4\",\"$pub5\",\"$pub6\",\"$pub8\",\"$pub7\",\"$pub9\",\"$pub10\",\"$pub11\",\"$pub12\",\"$pub13\",\"$pub14,\"$pub15\"\"]|grep redeemScript|awk '{print $2}'|sed 's/\"//g'|sed 's/\,//g'`
+redeemScript158=`/bin/bullockchain-cli -conf=/home/anryan/bullockChain.conf createmultisig 8 [\"$pub1\",\"$pub2\",\"$pub3\",\"$pub4\",\"$pub5\",\"$pub6\",\"$pub8\",\"$pub7\",\"$pub9\",\"$pub10\",\"$pub11\",\"$pub12\",\"$pub13\",\"$pub14\",\"$pub15\"]|grep redeemScript|awk '{print $2}'|sed 's/\"//g'|sed 's/\,//g'`
 echo "8 of 15 address is: $multi_add158, the redeem is: $redeemScript158"
 echo -e  "\n"
+
+
 
 multi_add159=`/bin/bullockchain-cli -conf=/home/anryan/bullockChain.conf createmultisig 9 [\"$pub1\",\"$pub2\",\"$pub3\",\"$pub4\",\"$pub5\",\"$pub6\",\"$pub7\",\"$pub8\",\"$pub9\",\"$pub10\",\"$pub11\",\"$pub12\",\"$pub13\",\"$pub14\",\"$pub15\"]|grep address|awk '{print $2}'|sed 's/\"//g'|sed 's/\,//g'`
 redeemScript159=`/bin/bullockchain-cli -conf=/home/anryan/bullockChain.conf createmultisig 9 [\"$pub1\",\"$pub2\",\"$pub3\",\"$pub4\",\"$pub5\",\"$pub6\",\"$pub8\",\"$pub7\",\"$pub9\",\"$pub10\",\"$pub11\",\"$pub12\",\"$pub13\",\"$pub14\",\"$pub15\"]|grep redeemScript|awk '{print $2}'|sed 's/\"//g'|sed 's/\,//g'`
@@ -653,7 +662,7 @@ echo "11 of 15 address is: $multi_add1511, the redeem is: $redeemScript1511"
 echo -e  "\n"
 
 multi_add1512=`/bin/bullockchain-cli -conf=/home/anryan/bullockChain.conf createmultisig 12 [\"$pub1\",\"$pub2\",\"$pub3\",\"$pub4\",\"$pub5\",\"$pub6\",\"$pub7\",\"$pub8\",\"$pub9\",\"$pub10\",\"$pub11\",\"$pub12\",\"$pub13\",\"$pub14\",\"$pub15\"]|grep address|awk '{print $2}'|sed 's/\"//g'|sed 's/\,//g'`
-redeemScript151=`/bin/bullockchain-cli -conf=/home/anryan/bullockChain.conf createmultisig 12 [\"$pub1\",\"$pub2\",\"$pub3\",\"$pub4\",\"$pub5\",\"$pub6\",\"$pub8\",\"$pub7\",\"$pub9\",\"$pub10\",\"$pub11\",\"$pub12\",\"$pub13\",\"$pub14\",\"$pub15\"]|grep redeemScript|awk '{print $2}'|sed 's/\"//g'|sed 's/\,//g'`
+redeemScript1512=`/bin/bullockchain-cli -conf=/home/anryan/bullockChain.conf createmultisig 12 [\"$pub1\",\"$pub2\",\"$pub3\",\"$pub4\",\"$pub5\",\"$pub6\",\"$pub8\",\"$pub7\",\"$pub9\",\"$pub10\",\"$pub11\",\"$pub12\",\"$pub13\",\"$pub14\",\"$pub15\"]|grep redeemScript|awk '{print $2}'|sed 's/\"//g'|sed 's/\,//g'`
 echo "12 of 15 address is: $multi_add1512, the redeem is: $redeemScript1512"
 echo -e  "\n"
 
@@ -715,9 +724,6 @@ redeemScript165=`/bin/bullockchain-cli -conf=/home/anryan/bullockChain.conf crea
 echo "5 of 16 address is: $multi_add165, the redeem is: $redeemScript165"
 echo -e  "\n"
 
-sleep 3
-
-
 
 multi_add166=`/bin/bullockchain-cli -conf=/home/anryan/bullockChain.conf createmultisig 6 [\"$pub1\",\"$pub2\",\"$pub3\",\"$pub4\",\"$pub5\",\"$pub6\",\"$pub7\",\"$pub8\",\"$pub9\",\"$pub10\",\"$pub11\",\"$pub12\",\"$pub13\",\"$pub14\",\"$pub15\",\"$pub16\"]|grep address|awk '{print $2}'|sed 's/\"//g'|sed 's/\,//g'`
 
@@ -753,7 +759,7 @@ redeemScript169=`/bin/bullockchain-cli -conf=/home/anryan/bullockChain.conf crea
 echo "9 of 16 address is: $multi_add169, the redeem is: $redeemScript169"
 echo -e  "\n"
 
-sleep 3
+
 
 multi_add1610=`/bin/bullockchain-cli -conf=/home/anryan/bullockChain.conf createmultisig 10 [\"$pub1\",\"$pub2\",\"$pub3\",\"$pub4\",\"$pub5\",\"$pub6\",\"$pub7\",\"$pub8\",\"$pub9\",\"$pub10\",\"$pub11\",\"$pub12\",\"$pub13\",\"$pub14\",\"$pub15\",\"$pub16\"]|grep address|awk '{print $2}'|sed 's/\"//g'|sed 's/\,//g'`
 
@@ -799,7 +805,7 @@ echo -e  "\n"
 
 multi_add1615=`/bin/bullockchain-cli -conf=/home/anryan/bullockChain.conf createmultisig 15 [\"$pub1\",\"$pub2\",\"$pub3\",\"$pub4\",\"$pub5\",\"$pub6\",\"$pub7\",\"$pub8\",\"$pub9\",\"$pub10\",\"$pub11\",\"$pub12\",\"$pub13\",\"$pub14\",\"$pub15\",\"$pub16\"]|grep address|awk '{print $2}'|sed 's/\"//g'|sed 's/\,//g'`
 
-redeemScript1613=`/bin/bullockchain-cli -conf=/home/anryan/bullockChain.conf createmultisig 15 [\"$pub1\",\"$pub2\",\"$pub3\",\"$pub4\",\"$pub5\",\"$pub6\",\"$pub8\",\"$pub7\",\"$pub9\",\"$pub10\",\"$pub11\",\"$pub12\",\"$pub13\",\"$pub14\",\"$pub15\",\"$pub16\"]|grep redeemScript|awk '{print $2}'|sed 's/\"//g'|sed 's/\,//g'`
+redeemScript1615=`/bin/bullockchain-cli -conf=/home/anryan/bullockChain.conf createmultisig 15 [\"$pub1\",\"$pub2\",\"$pub3\",\"$pub4\",\"$pub5\",\"$pub6\",\"$pub8\",\"$pub7\",\"$pub9\",\"$pub10\",\"$pub11\",\"$pub12\",\"$pub13\",\"$pub14\",\"$pub15\",\"$pub16\"]|grep redeemScript|awk '{print $2}'|sed 's/\"//g'|sed 's/\,//g'`
 
 echo "15 of 16 address is: $multi_add1615, the redeem is: $redeemScript1615"
 echo -e  "\n"
@@ -813,75 +819,6 @@ redeemScript1616=`/bin/bullockchain-cli -conf=/home/anryan/bullockChain.conf cre
 
 echo "16 of 16 address is: $multi_add1616, the redeem is: $redeemScript1616"
 echo -e  "\n"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
