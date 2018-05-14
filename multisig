@@ -9,6 +9,7 @@ add6=`/bin/bullockchain-cli -conf=/home/anryan/bullockChain.conf getnewaddress`
 add7=`/bin/bullockchain-cli -conf=/home/anryan/bullockChain.conf getnewaddress`
 add8=`/bin/bullockchain-cli -conf=/home/anryan/bullockChain.conf getnewaddress`
 add9=`/bin/bullockchain-cli -conf=/home/anryan/bullockChain.conf getnewaddress`
+
 add10=`/bin/bullockchain-cli -conf=/home/anryan/bullockChain.conf getnewaddress`
 add11=`/bin/bullockchain-cli -conf=/home/anryan/bullockChain.conf getnewaddress`
 add12=`/bin/bullockchain-cli -conf=/home/anryan/bullockChain.conf getnewaddress`
@@ -35,7 +36,7 @@ pub15=`/bin/bullockchain-cli -conf=/home/anryan/bullockChain.conf validateaddres
 pub16=`/bin/bullockchain-cli -conf=/home/anryan/bullockChain.conf validateaddress $add16|grep pubkey|awk '{print $2}'|sed 's/\"//g'|sed 's/\,//g'`
 
 
-
+echo -e "all of the addresses:$add1 \n $add2  \n $add3 \n $add4 \n $add5 \n $add6 \n $add7 \n $add8 \n $add9 \n $add10 \n $add11 \n $add12 \n $add13 \n $add14 \n $add15 \n $add16" 
 
 multi_add21=`/bin/bullockchain-cli -conf=/home/anryan/bullockChain.conf createmultisig 1 [\"$pub1\",\"$pub2\"]|grep address|awk '{print $2}'|sed 's/\"//g'|sed 's/\,//g'`
 redeemScript21=`/bin/bullockchain-cli -conf=/home/anryan/bullockChain.conf createmultisig 1 [\"$pub1\",\"$pub2\"]|grep redeemScript|awk '{print $2}'|sed 's/\"//g'|sed 's/\,//g'`
