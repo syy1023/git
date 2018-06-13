@@ -1,0 +1,301 @@
+#！/user/bin/python3
+import sys
+from collections import deque
+import re
+import json
+
+print ("Hello python3")
+
+#using annotation to identify the grammer
+
+
+#num type like int boolean float string
+
+a=2
+b=True
+c=1.2334
+d="this is string type,string d"
+e="another string"
+
+#字符串处理
+print (d*2)
+print(d[0:-5])
+print (d[1:4])
+print (d[0:13]+","+e)
+
+str1="howdoyoudo"
+m="y"
+if m in str1:
+    print ("m in str1")
+else:
+    print ("m not in str1")
+
+
+
+
+
+'''
+using of input
+input("input your name :")
+'''
+
+#同一行使用多条语句
+import sys; x="runaway";sys.stdout.write(x+'\n')
+
+
+#同时给多个变量赋值
+A=B=C=13
+
+A1=B1=C1=1,1.2,"contentC"
+
+"""
+不可变数据（四个）：Number（数字）、String（字符串）、Tuple（元组）、Sets（集合）；
+可变数据（两个）：List（列表）、Dictionary（字典）
+
+List（列表） 是 Python 中使用最频繁的数据类型
+"""
+
+
+#列表元素,
+"""
+list列表常用方法append(),delete(),insert,remove,pop,
+clear,index,count()计算元素出现的次数,sort,reverse,copy
+"""
+list1=["one","two","three","four","five"]
+list2=[1,2]
+list2.append("3")
+len(list2)
+listcobination=list1+list2
+
+
+print (list1,end=",")
+print (list1[0:2])
+print (list1[0:-3])
+print (list1+list2)
+print (list2)
+print (listcobination)
+print (max(list1))
+print (min(list1))
+print (list(list1))
+print (tuple(list1))
+for x in list1:print (x)
+
+#列表当堆栈使用，元素先进后出
+stack=[1,2,3,4,5,6]
+print ("before pop elements in stack are:",stack)
+stack.pop()
+print ("after pop elements in stack are:",stack)
+
+#列表当队列使用
+que=deque(["second","minute","hour"])
+que.append("day")
+que.append("month")
+que.popleft()
+print ("after the first pop,que :",que)
+que.popleft()
+print ("after the second pop,que :",que)
+
+
+
+
+
+
+#元组元素，元组虽然不支持修改但是可以使用del删除整个元组，元组之间可以使用 + 号和 * 号进行运算，可以所以
+#max,min,len,tuple
+tuple1=("Mon","Thu","Wed","Thur","Fri")
+tuple2=(1,2)
+print (tuple1)
+print (tuple1[0:3])
+print (tuple1+tuple2)
+
+
+#字典
+'''
+字典是无序的对象集合。两者之间的区别在于：字典当中的元素是通过键来存取的，而不是通过偏移存取。
+第一个使用方法一定要声明，否则会报错  常用方法如clear(),del len str(dic)'''
+dict={}
+dict["name1"]="anryan"
+
+
+
+mydict={"name2":"syy","name3":"anan"}
+
+print(dict["name1"])
+print (mydict)
+
+
+
+
+
+#set集合,无序不重复元素的序列,基本功能是进行成员关系测试和删除重复元素
+
+
+workmates={"Mike","John","Mary"}
+print (workmates)
+
+
+#使用set进行集合运算
+aset=set("abcdefghijk")
+bset=set("aabbccdd")
+
+print (aset | bset)
+print (aset - bset)
+print (aset & bset)
+print (aset ^ bset)
+
+
+
+
+
+
+#if语句
+
+age=int(input("please input your age:"))
+
+if 0<age<18:
+    print ("you are a pupil or middle or high school student?")
+elif 18<=age<=28:
+    print ("you are a college student or a working person")
+elif age>28:
+    print ("sorry, age over 28 is not permitted in")
+
+else:
+    print ("please input right age number")
+
+
+#while语句
+i=1
+sum=0
+while(i<101):
+    
+    sum=sum+i
+    i=i+1
+print (sum)
+
+
+k=0
+while(k<5):
+    #print ("number less than 5:",k)
+    pass
+    k+=1
+else:
+    print ("number more than 5 now ：",k)
+
+
+#for循环语句
+#months="January Februry March April May June July August September Octobor December November"
+string1="12345678"
+string2=["one","two","three","four","five","six","seven","eight"]
+#months1=["January","Februry","March","April","May","June","July","August","September","Octobor","December","November"]
+
+for m in string1:
+    print (m,end=",")
+    for n in string2:
+        print (n)
+
+    else:
+        print ("loop over")
+    
+
+
+for q in range(1,10,1):
+    if (q>5)&(q!=7):
+        print ("more 5:",q)
+    elif q==7:
+        print ("it will stop at :",q)
+        break
+    else:
+        print ("finished",q)
+
+
+for w in range(1,10):
+    if w<6:
+        pass
+    elif w>=6:
+        print (w)
+        continue
+ 
+
+
+#迭代器和生成器,
+
+"""迭代器一个一个地访问元素，并且只能往前不后退
+
+"""
+list3=[1,"one",2,"two"]
+ite=iter(list3)
+for x in ite:
+    print (x,end=" ")
+
+
+
+#定义函数和匿名函数lambda
+
+def multi(a,b,c):
+    return a*b*c
+
+print (multi(2,3,4))
+
+
+sumamount=lambda v1,v2,v3:v1+v2+v3
+
+print ("lambda函数设置的result是：",sumamount(10,11,12))
+
+
+#列表推导式
+
+container1=[22,33,44]
+container2=[2,3,4]
+
+print ([x*3 for x in container1])
+
+print ([x*3 for x in container1 if x >30])
+
+print ([x*y for x in container1 for y in container2])
+
+
+dictionary1={"name":"mary","age":"23","address":"bakery avenue"}
+#python和json
+#将python字典转化成json数据
+
+json_str=json.dumps(dictionary1)
+
+print ("dic to jason:",json_str)
+
+for key1 in dictionary1.keys():
+    print (key1)
+
+
+
+#正则表达式
+"""
+e.match 尝试从字符串的起始位置匹配一个模式
+re.match(pattern, string, flags=0)
+
+"""
+
+original="one is one two is two"
+after=re.match(r'(.*)is(.*)',original,re.M|re.I)
+#is出现第二次的str
+print ("the match is : ",after.group(2))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
