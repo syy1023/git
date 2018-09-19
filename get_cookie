@@ -25,9 +25,9 @@ with open('C:\\Users\\test\\Desktop\\num.txt') as lines:
 
         headers = {
             'content-type': "application/x-www-form-urlencoded",
-            'cookie': "PHPSESSID=rlmihasl6u1kqnl68rid80mq61",
+            'cookie': "PHPSESSID=rlmihasl6u1kqnXXXXXXXXX",
             'cache-control': "no-cache",
-            'postman-token': "331bf78b-5352-4035-a870-f54bd320b326"
+            'postman-token': "331bf78b-5352-4035-a870-XXXXXXXXXX"
             }
 
         response = requests.request("POST", url, data=payload, headers=headers, params=querystring)
